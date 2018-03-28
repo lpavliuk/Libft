@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: opavliuk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/23 16:37:57 by opavliuk          #+#    #+#             */
-/*   Updated: 2018/03/27 14:25:15 by opavliuk         ###   ########.fr       */
+/*   Created: 2018/03/28 14:14:38 by opavliuk          #+#    #+#             */
+/*   Updated: 2018/03/28 15:05:51 by opavliuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+size_t	ft_lstlen(t_list *list)
 {
-	int i;
+	size_t i;
 
 	i = 0;
-	if (s == NULL)
-		return ;
-	while (s[i] != '\0')
+	if (!list)
+		return (0);
+	while (list)
 	{
-		f(i, &s[i]);
+		list = list->next;
 		i++;
 	}
+	return (i);
 }

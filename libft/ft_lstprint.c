@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstprint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: opavliuk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/21 16:37:36 by opavliuk          #+#    #+#             */
-/*   Updated: 2018/03/26 20:34:56 by opavliuk         ###   ########.fr       */
+/*   Created: 2018/03/28 14:22:17 by opavliuk          #+#    #+#             */
+/*   Updated: 2018/03/28 14:44:50 by opavliuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_lstprint(t_list *list)
 {
-	size_t			i;
-	unsigned char	*d;
-	unsigned char	*s;
+	size_t i;
 
 	i = 0;
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
-	while (s[i] != '\0' && i < n)
+	if (!list)
+		return ;
+	while (list)
 	{
-		d[i] = s[i];
+		ft_putstr(ft_itoa(i));
+		ft_putchar(':');
+		ft_putstr((char *)(list->content));
+		ft_putchar('\n');
+		list = list->next;
 		i++;
 	}
-	return (d);
 }
