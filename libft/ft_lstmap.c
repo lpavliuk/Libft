@@ -6,7 +6,7 @@
 /*   By: opavliuk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 11:13:20 by opavliuk          #+#    #+#             */
-/*   Updated: 2018/03/28 20:13:57 by opavliuk         ###   ########.fr       */
+/*   Updated: 2018/03/28 20:53:57 by opavliuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	t_list *tmp;
 	t_list *new;
 
-	new = lst;
 	if (lst && (*f))
 	{
+		new = lst;
 		if (!(ping = f(lst)))
 			return (NULL);
 		tmp = ping;

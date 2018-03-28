@@ -6,7 +6,7 @@
 /*   By: opavliuk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 10:33:57 by opavliuk          #+#    #+#             */
-/*   Updated: 2018/03/28 11:12:29 by opavliuk         ###   ########.fr       */
+/*   Updated: 2018/03/28 21:00:09 by opavliuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ void	ft_lstadd(t_list **alst, t_list *new)
 {
 	t_list *ping;
 
-	ping = (*alst);
-	(*alst) = new;
-	(*alst)->next = ping;
+	if (alst)
+	{
+		ping = (*alst);
+		(*alst) = new;
+		(*alst)->next = ping;
+	}
 }
