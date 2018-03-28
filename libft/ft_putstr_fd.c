@@ -6,7 +6,7 @@
 /*   By: opavliuk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/26 15:50:30 by opavliuk          #+#    #+#             */
-/*   Updated: 2018/03/26 15:57:37 by opavliuk         ###   ########.fr       */
+/*   Updated: 2018/03/28 19:38:30 by opavliuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	if (s == NULL)

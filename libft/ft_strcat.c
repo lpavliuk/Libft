@@ -6,7 +6,7 @@
 /*   By: opavliuk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/21 21:19:39 by opavliuk          #+#    #+#             */
-/*   Updated: 2018/03/21 21:33:00 by opavliuk         ###   ########.fr       */
+/*   Updated: 2018/03/28 19:47:40 by opavliuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-	int i;
-	int n;
+	size_t i;
+	size_t n;
 
 	i = 0;
 	n = 0;

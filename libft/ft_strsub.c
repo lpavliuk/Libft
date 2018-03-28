@@ -6,7 +6,7 @@
 /*   By: opavliuk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/23 19:15:47 by opavliuk          #+#    #+#             */
-/*   Updated: 2018/03/27 14:28:06 by opavliuk         ###   ########.fr       */
+/*   Updated: 2018/03/28 20:22:50 by opavliuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char		*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	int		i;
+	size_t	i;
 	char	*d;
 
 	i = 0;

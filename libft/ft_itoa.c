@@ -6,15 +6,15 @@
 /*   By: opavliuk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/26 13:40:25 by opavliuk          #+#    #+#             */
-/*   Updated: 2018/03/27 19:01:58 by opavliuk         ###   ########.fr       */
+/*   Updated: 2018/03/28 19:32:45 by opavliuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count(int n)
+static size_t	ft_count(int n)
 {
-	int c;
+	size_t c;
 
 	if (n == -2147483648)
 		return (11);
@@ -30,10 +30,10 @@ static int	ft_count(int n)
 	return (c);
 }
 
-static char	*ft_string(char *str, int n, int c)
+static char		*ft_string(char *str, int n, size_t c)
 {
-	int i;
-	int	k;
+	int		i;
+	int		k;
 
 	k = 0;
 	i = c - 1;
@@ -55,10 +55,10 @@ static char	*ft_string(char *str, int n, int c)
 	return (str);
 }
 
-char		*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-	int		i;
-	int		c;
+	size_t	i;
+	size_t	c;
 	char	*str;
 
 	i = 0;

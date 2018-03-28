@@ -6,7 +6,7 @@
 /*   By: opavliuk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 14:22:17 by opavliuk          #+#    #+#             */
-/*   Updated: 2018/03/28 14:44:50 by opavliuk         ###   ########.fr       */
+/*   Updated: 2018/03/28 20:26:38 by opavliuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,16 @@ void	ft_lstprint(t_list *list)
 	size_t i;
 
 	i = 0;
-	if (!list)
-		return ;
-	while (list)
+	if (list)
 	{
-		ft_putstr(ft_itoa(i));
-		ft_putchar(':');
-		ft_putstr((char *)(list->content));
-		ft_putchar('\n');
-		list = list->next;
-		i++;
+		while (list)
+		{
+			ft_putstr(ft_itoa(i));
+			ft_putchar(':');
+			ft_putstr((char *)(list->content));
+			ft_putchar('\n');
+			list = list->next;
+			i++;
+		}
 	}
 }

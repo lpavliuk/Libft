@@ -6,7 +6,7 @@
 /*   By: opavliuk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/22 17:24:22 by opavliuk          #+#    #+#             */
-/*   Updated: 2018/03/28 15:29:18 by opavliuk         ###   ########.fr       */
+/*   Updated: 2018/03/28 20:18:09 by opavliuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+	size_t i;
 
 	i = 0;
 	while (s1[i] == s2[i] && s1[i] != '\0'

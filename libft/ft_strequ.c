@@ -6,7 +6,7 @@
 /*   By: opavliuk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/23 17:43:56 by opavliuk          #+#    #+#             */
-/*   Updated: 2018/03/23 18:05:44 by opavliuk         ###   ########.fr       */
+/*   Updated: 2018/03/28 20:22:12 by opavliuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
-	int i;
+	size_t	i;
 
 	i = 0;
 	if (s1 == NULL || s2 == NULL)

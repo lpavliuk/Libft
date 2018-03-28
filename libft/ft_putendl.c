@@ -6,7 +6,7 @@
 /*   By: opavliuk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/26 15:22:48 by opavliuk          #+#    #+#             */
-/*   Updated: 2018/03/26 15:59:35 by opavliuk         ###   ########.fr       */
+/*   Updated: 2018/03/28 19:37:18 by opavliuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putendl(char const *s)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	if (s == NULL)

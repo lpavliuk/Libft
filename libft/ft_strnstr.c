@@ -6,13 +6,13 @@
 /*   By: opavliuk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/22 13:50:36 by opavliuk          #+#    #+#             */
-/*   Updated: 2018/03/26 19:26:38 by opavliuk         ###   ########.fr       */
+/*   Updated: 2018/03/28 20:17:21 by opavliuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		check(char *b, char *l, int i, int n)
+static size_t	check(char *b, char *l, size_t i, size_t n)
 {
 	while (b[i] == l[n])
 	{
@@ -29,8 +29,8 @@ static int		check(char *b, char *l, int i, int n)
 
 char			*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int		i;
-	int		n;
+	size_t	i;
+	size_t	n;
 	char	*b;
 	char	*l;
 

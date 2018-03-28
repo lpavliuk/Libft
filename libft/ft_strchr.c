@@ -6,7 +6,7 @@
 /*   By: opavliuk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/22 12:50:53 by opavliuk          #+#    #+#             */
-/*   Updated: 2018/03/26 21:34:28 by opavliuk         ###   ########.fr       */
+/*   Updated: 2018/03/28 19:48:29 by opavliuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int		i;
+	size_t	i;
 	char	*d;
 
 	i = 0;

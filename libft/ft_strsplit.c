@@ -6,7 +6,7 @@
 /*   By: opavliuk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/26 10:41:23 by opavliuk          #+#    #+#             */
-/*   Updated: 2018/03/28 18:36:28 by opavliuk         ###   ########.fr       */
+/*   Updated: 2018/03/28 20:24:16 by opavliuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static int		count_letters(char *g, int i, char c)
 	return (l);
 }
 
-static void		ft_wordscpy(char *d, char *g, int i, int l)
+static void		ft_wordscpy(char *d, char *g, size_t i, size_t l)
 {
-	int n;
+	size_t n;
 
 	n = 0;
 	while (n < l)
@@ -39,10 +39,10 @@ static void		ft_wordscpy(char *d, char *g, int i, int l)
 	d[n] = '\0';
 }
 
-static char		**ft_split(char **d, char *g, char c, int i)
+static char		**ft_split(char **d, char *g, char c, size_t i)
 {
-	int k;
-	int l;
+	size_t k;
+	size_t l;
 
 	k = 0;
 	l = 0;
@@ -70,8 +70,8 @@ static char		**ft_split(char **d, char *g, char c, int i)
 
 char			**ft_strsplit(char const *s, char c)
 {
-	int		i;
-	int		n;
+	size_t	i;
+	size_t	n;
 	char	*g;
 	char	**d;
 
