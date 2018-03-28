@@ -6,31 +6,11 @@
 /*   By: opavliuk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/26 10:41:23 by opavliuk          #+#    #+#             */
-/*   Updated: 2018/03/26 19:27:45 by opavliuk         ###   ########.fr       */
+/*   Updated: 2018/03/28 18:36:28 by opavliuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int		count_words(char *g, char c)
-{
-	int i;
-	int n;
-
-	i = 0;
-	n = 0;
-	while (g[i] != '\0')
-	{
-		while (g[i] == c && g[i] != '\0')
-			i++;
-		if (g[i] == '\0')
-			break ;
-		n++;
-		while (g[i] != '\0' && g[i] != c)
-			i++;
-	}
-	return (n);
-}
 
 static int		count_letters(char *g, int i, char c)
 {
@@ -75,7 +55,10 @@ static char		**ft_split(char **d, char *g, char c, int i)
 		l = (count_letters(g, i, c));
 		d[k] = (char *)malloc(sizeof(char) * (l + 1));
 		if (d[k] == NULL)
+		{
+			ft_stralldel(d, k);
 			return (NULL);
+		}
 		ft_bzero(d[k], (l + 1));
 		ft_wordscpy(d[k], g, i, l);
 		i = i + l;
@@ -97,7 +80,7 @@ char			**ft_strsplit(char const *s, char c)
 	g = (char *)s;
 	if (s == NULL)
 		return (NULL);
-	n = count_words(g, c);
+	n = ft_count_words(g, c);
 	d = (char **)malloc(sizeof(char *) * (n + 1));
 	if (d == NULL)
 		return (NULL);

@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_count_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: opavliuk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/22 17:34:41 by opavliuk          #+#    #+#             */
-/*   Updated: 2018/03/28 15:57:40 by opavliuk         ###   ########.fr       */
+/*   Created: 2018/03/28 18:33:20 by opavliuk          #+#    #+#             */
+/*   Updated: 2018/03/28 18:38:04 by opavliuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int					ft_atoi(const char *str)
+size_t		ft_count_words(char *str, char c)
 {
-	int			x;
-	size_t		i;
-	long long	num;
+	size_t i;
+	size_t n;
 
-	x = 1;
 	i = 0;
-	num = 0;
-	while ((str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-			&& str[i] != '\0')
-		i++;
-	(str[i] == '-') ? x = -1 : 0;
-	(str[i] == '+' || str[i] == '-') ? i++ : 0;
-	while (str[i] >= '0' && str[i] <= '9')
+	n = 0;
+	while (str[i] != '\0')
 	{
-		num = num * 10 + (str[i] - '0');
-		i++;
+		while (str[i] == c && str[i] != '\0')
+			i++;
+		if (str[i] == '\0')
+			break ;
+		n++;
+		while (str[i] != '\0' && str[i] != c)
+			i++;
 	}
-	(num < 0 && x == -1) ? num = 0 : 0;
-	(num < 0 && x == 1) ? num = -1 : 0;
-	return ((int)(num * x));
+	return (n);
 }

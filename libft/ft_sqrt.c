@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: opavliuk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/22 17:34:41 by opavliuk          #+#    #+#             */
-/*   Updated: 2018/03/28 15:57:40 by opavliuk         ###   ########.fr       */
+/*   Created: 2018/03/28 18:43:31 by opavliuk          #+#    #+#             */
+/*   Updated: 2018/03/28 19:10:21 by opavliuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int					ft_atoi(const char *str)
+size_t		ft_sqrt(size_t n)
 {
-	int			x;
-	size_t		i;
-	long long	num;
+	size_t i;
 
-	x = 1;
-	i = 0;
-	num = 0;
-	while ((str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-			&& str[i] != '\0')
-		i++;
-	(str[i] == '-') ? x = -1 : 0;
-	(str[i] == '+' || str[i] == '-') ? i++ : 0;
-	while (str[i] >= '0' && str[i] <= '9')
+	i = 2;
+	if (n == 0 || n == 2 || n == 3)
+		return (0);
+	if (n == 1)
+		return (1);
+	if (n % 2 == 0)
+		while (n > i)
+		{
+			if (n / i == i && n % i == 0)
+				return (i);
+			i += 2;
+		}
+	else
 	{
-		num = num * 10 + (str[i] - '0');
 		i++;
+		while (n > i)
+		{
+			if (n / i == i && n % i == 0)
+				return (i);
+			i += 2;
+		}
 	}
-	(num < 0 && x == -1) ? num = 0 : 0;
-	(num < 0 && x == 1) ? num = -1 : 0;
-	return ((int)(num * x));
+	return (0);
 }
