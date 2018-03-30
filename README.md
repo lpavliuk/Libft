@@ -1,10 +1,13 @@
 # Libft
 
+This repository consists of my own library on C language. What consists of my own functions that I wrote be myself. 
+
+That functions can be usefully for you!
 
 # List Of Functions (LOF)
 
 
-__#include "libft.h"__
+__#include "libft.h"__ - Don't forget to include! =) 
 
 
 
