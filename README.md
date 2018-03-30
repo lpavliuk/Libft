@@ -7,6 +7,7 @@
 __#include "libft.h"__
 
 
+
 /* ft_memset */ - Fills (n bytes) of array elements with a character (which is passed as an argument).
 
 /* ft_bzero */ - Fills an array with zeros.
@@ -40,11 +41,18 @@ __#include "libft.h"__
 / * ft_tolower * / - Upper letters are converted to lower letters.
 
 
+
+
+__For digits:__
+
+
 / * ft_atoi * / - Translates from a data type character to an int data type.
 
 / * ft_itoa * / - Translates from a data type int to a data type char and returns an array.
 
 / * ft_sqrt * / - Determines from which number the root is square.
+
+
 
 
 __For string:__
@@ -119,6 +127,8 @@ __For string:__
 / * ft_putendl_fd * / - Writes a string to the form and puts '\ n' at the end.
 
 / * ft_putnbr_fd * / - Writes the data type int, translating to char, into the form.
+
+
 
 
 __For list:__
