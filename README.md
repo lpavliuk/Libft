@@ -4,7 +4,7 @@ This repository consists of my own library on C language. What consists of my ow
 
 That functions can be usefully for you!
 
-# List Of Functions (LOF)
+# List Of Libft (LOL)
 
 
 __#include "libft.h"__
