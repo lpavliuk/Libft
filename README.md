@@ -40,11 +40,7 @@ __#include "libft.h"__
 
 / * ft_tolower * / - Upper letters are converted to lower letters.
 
-
-
-
 __For digits:__
-
 
 / * ft_atoi * / - Translates from a data type character to an int data type.
 
@@ -52,11 +48,7 @@ __For digits:__
 
 / * ft_sqrt * / - Determines from which number the root is square.
 
-
-
-
 __For string:__
-
 
 / * ft_strlen * / - Counts the number of characters in the string (without '\0').
 
@@ -128,11 +120,7 @@ __For string:__
 
 / * ft_putnbr_fd * / - Writes the data type int, translating to char, into the form.
 
-
-
-
 __For list:__
-
 
 / * ft_lstnew * / - Creates a new list element and writes the content there.
 
@@ -149,4 +137,3 @@ __For list:__
 / * ft_lstlen * / - Counts how many items are in the list.
 
 / * ft_lstprint * / - Displays symbolically the contents of the list.
-
