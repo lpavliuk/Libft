@@ -7,7 +7,7 @@ That functions can be usefully for you!
 # List Of Functions (LOF)
 
 
-__#include "libft.h"__ - Don't forget to include! =) 
+__#include "libft.h"__
 
 
 
