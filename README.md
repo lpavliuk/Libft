@@ -9,134 +9,146 @@ That functions can be usefully for you!
 
 __#include "libft.h"__
 
+__---------------__
 
+__ft_memset__ - Fills (n bytes) of array elements with a character (which is passed as an argument).
 
-/* ft_memset */ - Fills (n bytes) of array elements with a character (which is passed as an argument).
+__ft_bzero__ - Fills an array with zeros.
 
-/* ft_bzero */ - Fills an array with zeros.
+__ft_memcpy__ - Copies to the buffer (n bytes) the characters of the string.
 
-/* ft_memcpy */ - Copies to the buffer (n bytes) the characters of the string.
+__ft_memccpy__ - Copies the characters (n bytes) of the string to the buffer before the specified character.
 
-/ * ft_memccpy * / - Copies the characters (n bytes) of the string to the buffer before the specified character.
+__ft_memmove__ - Copies (n number of characters), that can overlap.
 
-/ * ft_memmove * / - Copies (n number of characters), that can overlap.
+__ft_memchr__ - Finds a character in a string and returns a pointer to it.
 
-/ * ft_memchr * / - Finds a character in a string and returns a pointer to it.
+__ft_memcmp__ - Compares two lines, outputs the difference between the characters.
 
-/ * ft_memcmp * / - Compares two lines, outputs the difference between the characters.
+__ft_memalloc__ - Selects the dynamic memory of type void.
 
-/ * ft_memalloc * / - Selects the dynamic memory of type void.
+__ft_memdel__ - Frees memory after "malloc".
 
-/ * ft_memdel * / - Frees memory after "malloc".
+__ft_isalpha__ - Checks whether this is a letter.
 
-/ * ft_isalpha * / - Checks whether this is a letter.
+__ft_isdigit__ - Checks whether this is a digit.
 
-/ * ft_isdigit * / - Checks whether this is a digit.
+__ft_isalnum__ - Checks whether this is a digit or a letter.
 
-/ * ft_isalnum * / - Checks whether this is a digit or a letter.
+__ft_isascii__ - Checks whether the character is an ASCII table.
 
-/ * ft_isascii * / - Checks whether the character is an ASCII table.
+__ft_isprint__ - Checks if a character is output (we will see it or not).
 
-/ * ft_isprint * / - Checks if a character is output (we will see it or not).
+__ft_toupper__ - Lower letters are converted to upper letters.
 
-/ * ft_toupper * / - Lower letters are converted to upper letters.
+__ft_tolower__ - Upper letters are converted to lower letters.
 
-/ * ft_tolower * / - Upper letters are converted to lower letters.
+__-------------__
 
 __For digit:__
 
-/ * ft_atoi * / - Translates from a data type character to an int data type.
+__-------------__
 
-/ * ft_itoa * / - Translates from a data type int to a data type char and returns an array.
+__ft_atoi__ - Translates from a data type character to an int data type.
 
-/ * ft_sqrt * / - Determines from which number the root is square.
+__ft_itoa__ - Translates from a data type int to a data type char and returns an array.
+
+__ft_sqrt__ - Determines from which number the root is square.
+
+__ft_putnbr__ - Displays the int data type.
+
+__ft_putnbr_fd__ - Writes the data type int, translating to char, into the form.
+
+__------------__
 
 __For string:__
 
-/ * ft_strlen * / - Counts the number of characters in the string (without '\0').
+__-------------__
 
-/ * ft_strdup * / - Duplicates the string.
+__ft_strlen__ - Counts the number of characters in the string (without '\0').
 
-/ * ft_strcpy * / - Copies a string to the buffer.
+__ft_strdup__ - Duplicates the string.
 
-/ * ft_strncpy * / - Copies the bytes of the string to the buffer (n bytes).
+__ft_strcpy__ - Copies a string to the buffer.
 
-/ * ft_strcat * / - Connects two lines.
+__ft_strncpy__ - Copies the bytes of the string to the buffer (n bytes).
 
-/ * ft_strncat * / - Connects two lines (n bytes) or to end of line.
+__ft_strcat__ - Connects two lines.
 
-/ * ft_strlcat * / - Connects two lines and returns the total number of characters.
+__ft_strncat__ - Connects two lines (n bytes) or to end of line.
 
-/ * ft_strchr * / - Finds a character in a string and returns a pointer to it.
+__ft_strlcat__ - Connects two lines and returns the total number of characters.
 
-/ * ft_strrchr * / - Find the last character in the string and return the pointer to it.
+__ft_strchr__ - Finds a character in a string and returns a pointer to it.
 
-/ * ft_strstr * / - Searches for a string in a string and returns a pointer to the first character of the string that was searched for.
+__ft_strrchr__ - Find the last character in the string and return the pointer to it.
 
-/ * ft_strnstr * / - Searches for a string in a string, only (n number), and returns a pointer to the first character of the string that was searched for.
+__ft_strstr__ - Searches for a string in a string and returns a pointer to the first character of the string that was searched for.
 
-/ * ft_strcmp * / - Compares two lines and outputs the difference of characters.
+__ft_strnstr__ - Searches for a string in a string, only (n number), and returns a pointer to the first character of the string that was searched for.
 
-/ * ft_strncmp * / - Compares (n number) the characters of two lines and outputs the difference of characters.
+__ft_strcmp__ - Compares two lines and outputs the difference of characters.
 
-/ * ft_strnew * / - Allocates a dynamic char memory.
+__ft_strncmp__ - Compares (n number) the characters of two lines and outputs the difference of characters.
 
-/ * ft_strdel * / - Extends the string after "malloc".
+__ft_strnew__ - Allocates a dynamic char memory.
 
-/ * ft_strclr * / - The entire line is overwritten with '\ 0'.
+__ft_strdel__ - Extends the string after "malloc".
 
-/ * ft_striter * / - Each character of the string passes to a function (which is passed through a pointer).
+__ft_strclr__ - The entire line is overwritten with '\ 0'.
 
-/ * ft_striteri * / - Each character in the string and the index passes the function.
+__ft_striter__ - Each character of the string passes to a function (which is passed through a pointer).
 
-/ * ft_strmap * / - Creates a new line and writes the result of the function to which we are passing the string.
+__ft_striteri__ - Each character in the string and the index passes the function.
 
-/ * ft_strmapi * / - Creates a new line and writes the result of the function to which we pass the string and index.
+__ft_strmap__ - Creates a new line and writes the result of the function to which we are passing the string.
 
-/ * ft_strequ * / - Verifies two lines: 1 - if they are identical and 0 - if not.
+__ft_strmapi__ - Creates a new line and writes the result of the function to which we pass the string and index.
 
-/ * ft_strnequ * / - Compare two (n number) characters in a string: 1 - if they are identical and 0 - if not.
+__ft_strequ__ - Verifies two lines: 1 - if they are identical and 0 - if not.
 
-/ * ft_strsub * / - Copies from a specific character a string, a specified number of characters.
+__ft_strnequ__ - Compare two (n number) characters in a string: 1 - if they are identical and 0 - if not.
 
-/ * ft_strjoin * / - Combines two lines into one.
+__ft_strsub__ - Copies from a specific character a string, a specified number of characters.
 
-/ * ft_strtrim * / - Writes a string with no spaces at the beginning and at the end.
+__ft_strjoin__ - Combines two lines into one.
 
-/ * ft_strsplit * / - Separates a string using a delimiter into separate word arrays.
+__ft_strtrim__ - Writes a string with no spaces at the beginning and at the end.
 
-/ * ft_count_words * / - Counts how many words per line are based on the delimiter.
+__ft_strsplit__ - Separates a string using a delimiter into separate word arrays.
 
-/ * ft_putchar * / - Displays the symbol.
+__ft_count_words__ - Counts how many words per line are based on the delimiter.
 
-/ * ft_putstr * / - Displays the line.
+__ft_putchar__ - Displays the symbol.
 
-/ * ft_putendl * / - Prints a string and puts '\ n' at the end.
+__ft_putstr__ - Displays the line.
 
-/ * ft_putnbr * / - Displays the int data type.
+__ft_putendl__ - Prints a string and puts '\ n' at the end.
 
-/ * ft_putchar_fd * / - Writes a character to the form.
+__ft_putchar_fd__ - Writes a character to the form.
 
-/ * ft_putstr_fd * / - Writes a string to the form.
+__ft_putstr_fd__ - Writes a string to the form.
 
-/ * ft_putendl_fd * / - Writes a string to the form and puts '\ n' at the end.
+__ft_putendl_fd__ - Writes a string to the form and puts '\ n' at the end.
 
-/ * ft_putnbr_fd * / - Writes the data type int, translating to char, into the form.
+__-------------__
 
 __For list:__
 
-/ * ft_lstnew * / - Creates a new list element and writes the content there.
+__-------------__
 
-/ * ft_lstdelone * / - Releases one list item.
+__ft_lstnew__ - Creates a new list element and writes the content there.
 
-/ * ft_lstdel * / - Releases leaf elements and sets the pointer to NULL.
+__ft_lstdelone__ - Releases one list item.
 
-/ * ft_lstiter * / - Sends to a function (whose address is passed to parameters) each sheet element.
+__ft_lstdel__ - Releases leaf elements and sets the pointer to NULL.
 
-/ * ft_lstadd * / - Adds an element to the list.
+__ft_lstiter__ - Sends to a function (whose address is passed to parameters) each sheet element.
 
-/ * ft_lstmap * / - Writes the elements that the function returns (whose address is transferred to the parameters) in a new list.
+__ft_lstadd__ - Adds an element to the list.
 
-/ * ft_lstlen * / - Counts how many items are in the list.
+__ft_lstmap__ - Writes the elements that the function returns (whose address is transferred to the parameters) in a new list.
 
-/ * ft_lstprint * / - Displays symbolically the contents of the list.
+__ft_lstlen__ - Counts how many items are in the list.
+
+__ft_lstprint__ - Displays symbolically the contents of the list.
