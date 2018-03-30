@@ -9,7 +9,7 @@ That functions can be usefully for you!
 
 __#include "libft.h"__
 
-__---------------__
+__------------------------------------------------------------------------------------------------------------------------__
 
 __ft_memset__ - Fills (n bytes) of array elements with a character (which is passed as an argument).
 
@@ -43,11 +43,11 @@ __ft_toupper__ - Lower letters are converted to upper letters.
 
 __ft_tolower__ - Upper letters are converted to lower letters.
 
-__-------------__
+__------------------------------------------------------------------------------------------------------------------------__
 
 __For digit:__
 
-__-------------__
+__------------------------------------------------------------------------------------------------------------------------__
 
 __ft_atoi__ - Translates from a data type character to an int data type.
 
@@ -59,11 +59,11 @@ __ft_putnbr__ - Displays the int data type.
 
 __ft_putnbr_fd__ - Writes the data type int, translating to char, into the form.
 
-__------------__
+__------------------------------------------------------------------------------------------------------------------------__
 
 __For string:__
 
-__-------------__
+__------------------------------------------------------------------------------------------------------------------------__
 
 __ft_strlen__ - Counts the number of characters in the string (without '\0').
 
@@ -131,11 +131,11 @@ __ft_putstr_fd__ - Writes a string to the form.
 
 __ft_putendl_fd__ - Writes a string to the form and puts '\ n' at the end.
 
-__-------------__
+__------------------------------------------------------------------------------------------------------------------------__
 
 __For list:__
 
-__-------------__
+__------------------------------------------------------------------------------------------------------------------------__
 
 __ft_lstnew__ - Creates a new list element and writes the content there.
 
