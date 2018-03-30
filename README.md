@@ -40,7 +40,7 @@ __#include "libft.h"__
 
 / * ft_tolower * / - Upper letters are converted to lower letters.
 
-__For digits:__
+__For digit:__
 
 / * ft_atoi * / - Translates from a data type character to an int data type.
 
