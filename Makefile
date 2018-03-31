@@ -6,7 +6,7 @@
 #    By: opavliuk <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/26 16:04:15 by opavliuk          #+#    #+#              #
-#    Updated: 2018/03/28 20:40:19 by opavliuk         ###   ########.fr        #
+#    Updated: 2018/03/31 21:36:57 by opavliuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,7 +84,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
-%.o: %.c
+%.o: libft/%.c
 	$(CC) $(CFLAGS) -o $@ -c $< -I./
 
 clean:
