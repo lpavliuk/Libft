@@ -6,7 +6,7 @@
 #    By: opavliuk <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/26 16:04:15 by opavliuk          #+#    #+#              #
-#    Updated: 2018/03/31 21:36:57 by opavliuk         ###   ########.fr        #
+#    Updated: 2018/04/16 22:30:45 by opavliuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,8 @@ SRC=./ft_memset.c \
 	./ft_strsub.c \
 	./ft_strtrim.c \
 	./ft_tolower.c \
-	./ft_toupper.c
+	./ft_toupper.c \
+	./get_next_line.c
 OBJ=$(SRC:.c=.o)
 NAME=libft.a
 
@@ -88,7 +89,7 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -o $@ -c $< -I./
 
 clean:
-	rm -f *.o
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
