@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: opavliuk <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: opavliuk <opavliuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/21 12:40:45 by opavliuk          #+#    #+#             */
-/*   Updated: 2018/04/26 13:31:06 by opavliuk         ###   ########.fr       */
+/*   Updated: 2018/05/14 13:43:16 by opavliuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,33 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdarg.h>
+# include <wchar.h>
+# include "libft.h"
 
 # define BUFF_SIZE 42
+
+# define EOC "\e[0m"
+# define RED "\e[91m"
+# define GREEN "\e[92m"
+# define YELLOW "\e[93m"
+# define BLUE "\e[94m"
+# define PINK "\e[95m"
+# define WHITE "\e[97m"
+
+# define TYPE pf->type
+# define MODF pf->modifier
+# define SPACE pf->space
+# define HASH pf->hash
+# define PLUS pf->plus
+# define MINUS pf->minus
+# define ZERO pf->zero
+# define DOT pf->dot
+# define PREC pf->precision
+# define WIDTH pf->width
+# define BUFFER pf->buffer
+# define N pf->n
+# define N_UNI pf->n_uni
 
 typedef	struct	s_list
 {
@@ -88,7 +113,51 @@ size_t			ft_lstlen(t_list *list);
 void			ft_lstprint(t_list *list);
 void			ft_stralldel(char **str, size_t n);
 size_t			ft_count_words(char *str, char c);
+size_t			ft_count(intmax_t n, short int base);
 size_t			ft_sqrt(size_t n);
 int				get_next_line(const int fd, char **line);
+
+/*
+** ****************************************************************************
+** ***************************** FT_PRINTF ************************************
+** ****************************************************************************
+*/
+
+typedef struct	s_str
+{
+	char		type;
+	char		space;
+	char		plus;
+	char		minus;
+	char		zero;
+	char		dot;
+	char		hash;
+	char		modifier[3];
+	int			precision;
+	int			width;
+	char		buffer[42];
+	int			n;
+	int			symbols;
+	int			n_uni;
+}				t_str;
+
+int				ft_printf(const char *format, ...);
+int				check_percent(va_list ap, const char *format, t_str *pf);
+int				write_type_x_p(va_list ap, t_str *pf);
+int				write_type_d_i(va_list ap, t_str *pf);
+int				write_type_o(va_list ap, t_str *pf);
+int				write_type_u(va_list ap, t_str *pf);
+int				write_type_c(va_list ap, t_str *pf);
+int				write_type_s(va_list ap, t_str *pf);
+void			write_symbol_s_uni(t_str *pf, wchar_t *str_uni, int n);
+void			write_to_buffer(t_str *pf, int c);
+void			write_space_to_buffer(t_str *pf);
+int				write_colors(const char *format, t_str *pf);
+void			check_buffer(t_str *pf, int turn_off, int clean_pf);
+void			ft_cpy_to_buffer(t_str *pf, unsigned char *code, int len);
+void			ft_putnbr_base(intmax_t n, short int base, char big, t_str *pf);
+void			ft_unputnbr_base(uintmax_t n, short int base,
+											char big, t_str *pf);
+uintmax_t		check_modifier_un_int(va_list ap, t_str *pf);
 
 #endif
