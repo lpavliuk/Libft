@@ -14,18 +14,28 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	size_t i;
+	char			*begin;
+	uintmax_t		*dst_ptr;
+	const uintmax_t	*src_ptr;
 
-	i = 0;
-	while (src[i] != '\0' && i < len)
+	begin = dst;
+	src_ptr = (const uintmax_t *)src;
+	dst_ptr = (uintmax_t *)dst;
+	while (1)
 	{
-		dst[i] = src[i];
-		i++;
+		*dst_ptr = *src_ptr;
+		if ((((*src_ptr - 0x101010101010101L)
+			& ~(*src_ptr) & 0x8080808080808080L)) || len < 8)
+		{
+			src = (const char *)src_ptr;
+			dst = (char *)dst_ptr;
+			while ((*dst++ = *src++) && --len > 0)
+				;
+			(*dst != '\0') ? *dst = '\0' : 0;
+			return (begin);
+		}
+		len -= 8;
+		dst_ptr++;
+		src_ptr++;
 	}
-	while (i < len)
-	{
-		dst[i] = '\0';
-		i++;
-	}
-	return (dst);
 }

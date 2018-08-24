@@ -17,7 +17,7 @@ int main(void)
 
 	start_t = clock();
 	while (--i > 0)
-		ft_strcpy(dst, src);
+		ft_strncpy(dst, src, 10);
 	end_t = clock();
 	total_t = (double)(end_t - start_t);
 	printf("my: %s\n", dst);
@@ -26,7 +26,7 @@ int main(void)
 	i = 10000;
 	start_t = clock();
 	while (--i > 0)
-		strcpy(dst_orig, src);
+		strncpy(dst_orig, src, 10);
 	end_t = clock();
 	total_t = (double)(end_t - start_t);
 	printf("orig: %s\n", dst_orig);

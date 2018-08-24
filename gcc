@@ -1,2 +1,2 @@
- gcc main.c libft/*.c
+ gcc main.c libft/*.c -I libft
  ./a.out
