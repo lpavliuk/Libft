@@ -13,6 +13,10 @@ __#include <libft.h>__
 
 __------------------------------------------------------------------------------------------------------------------------__
 
+__ft_printf__ - this function is a copy of the popular original printf function in C language!
+
+__------------------------------------------------------------------------------------------------------------------------__
+
 __ft_memset__ - Fills (n bytes) of array elements with a character (which is passed as an argument).
 
 __ft_bzero__ - Fills an array with zeros.
