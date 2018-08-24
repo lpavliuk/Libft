@@ -14,14 +14,26 @@
 
 char	*ft_strcpy(char *dst, const char *src)
 {
-	size_t i;
+	char		*begin;
+	uintmax_t	*src_ptr;
+	uintmax_t	*dst_ptr;
 
-	i = 0;
-	while (src[i] != '\0')
+	begin = dst;
+	src_ptr = (uintmax_t *)src;
+	dst_ptr = (uintmax_t *)dst;
+	while (1)
 	{
-		dst[i] = src[i];
-		i++;
+		*dst_ptr = *src_ptr;
+		if (((*src_ptr - 0x101010101010101L)
+			& ~(*src_ptr) & 0x8080808080808080L))
+		{
+			src = (const char *)src_ptr;
+			dst = (char *)dst_ptr;
+			while ((*dst++ = *src++))
+				;
+			return (begin);
+		}
+		dst_ptr++;
+		src_ptr++;
 	}
-	dst[i] = '\0';
-	return (dst);
 }

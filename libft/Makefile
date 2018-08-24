@@ -97,7 +97,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
-%.o: libft/%.c
+%.o: %.c
 	$(CC) $(CFLAGS) -o $@ -c $< -I ./
 
 clean:

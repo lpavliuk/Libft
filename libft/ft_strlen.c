@@ -14,10 +14,22 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	const uintmax_t	*ptr;
+	const char		*str;
+	int				i;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	i = -1;
+	ptr = (const uintmax_t *)s;
+	while (1)
+	{
+		if (((*ptr - 0x101010101010101L)
+			& ~(*ptr) & 0x8080808080808080L))
+		{
+			str = (const char *)ptr;
+			while (str[++i] != '\0')
+				;
+			return (str - s + i);
+		}
+		ptr++;
+	}
 }
