@@ -1,51 +1,75 @@
 #include "libft.h"
 #include <stdio.h>
 #include <time.h>
+#include <sys/mman.h>
 
 int main(void)
 {
-	char dst[50];
-	char dst_orig[50];
-	char *src = "Hello world!";
+	char dst[16];
+	char dst_orig[16];
+	// char	dst1[30];
+	// char	dst2[30];
+	// char *src = "Hello world!";
+	char	*src = "œð˛ʼˇ,´˛ˀ-ºª•¶ªˆ§´";
+	char	dst1[80];
+	char	dst2[80];
+	size_t	max = 16;
 	int i;
 	clock_t start_t, end_t, total_t;
 
 	printf("====== ft__strcpy ======\n");
-	ft_bzero(dst, 50);
-	ft_bzero(dst_orig, 50);
-	i = 10000;
+	ft_bzero(dst, 16);
+	ft_bzero(dst_orig, 16);
+	// i = 10000;
+	// size_t max = 12;
 
-	start_t = clock();
-	while (--i > 0)
-		ft_strncpy(dst, src, 10);
-	end_t = clock();
-	total_t = (double)(end_t - start_t);
-	printf("my: %s\n", dst);
-	printf("time: %lu\n", total_t);
+	// memset(dst1, 'B', sizeof(dst1));
+	// memset(dst2, 'B', sizeof(dst2));
 
-	i = 10000;
-	start_t = clock();
-	while (--i > 0)
-		strncpy(dst_orig, src, 10);
-	end_t = clock();
-	total_t = (double)(end_t - start_t);
-	printf("orig: %s\n", dst_orig);
-	printf("time: %lu\n\n\n", total_t);
+	// strncpy(dst1, src, max);
+	// ft_strncpy(dst2, src, max);
+
+	// printf("dst1: %s, strlen: %d\n", dst1, strlen(dst1));
+	// printf("dst2: %s, strlen: %d\n", dst2, strlen(dst2));
+	memset(dst, 's', 13);
+	if (dst != ft_strncpy(dst, "lorem ipsum", 0))
+		write(1, "dest's adress was not returned\n", 31);
+	write(1, dst, 15);
+	memset(dst_orig, 's', 13);
+	if (dst_orig != strncpy(dst_orig, "lorem ipsum", 0))
+		write(1, "dest's adress was not returned\n", 31);
+	write(1, dst_orig, 15);
+	// start_t = clock();
+	// while (--i > 0)
+	// 	ft_strncpy(dst, src, 0);
+	// end_t = clock();
+	// total_t = (double)(end_t - start_t);
+	// printf("my: %s - %d\n", dst, strlen(dst));
+	// printf("time: %lu\n", total_t);
+
+	// i = 10000;
+	// start_t = clock();
+	// while (--i > 0)
+	// 	strncpy(dst_orig, src, 0);
+	// end_t = clock();
+	// total_t = (double)(end_t - start_t);
+	// printf("orig: %s - %d\n", dst_orig, strlen(dst_orig));
+	// printf("time: %lu\n\n\n", total_t);
 
 	// printf("====== ft__strlen ======\n");
 	// char buffer[10000];
-	// ft_bzero(buffer, 10000);
 	// ft_memset(buffer, '1', 10000);
 
+	// // mprotect(&buffer[5000], 5000, PROT_NONE);
 	// start_t = clock();
-	// int c = ft_strlen(src);
+	// int c = ft_strlen(buffer);
 	// end_t = clock();
 	// total_t = (double)(end_t - start_t);
 	// printf("my: %d\n", c);
 	// printf("time: %lu\n", total_t);
 
 	// start_t = clock();
-	// int n = strlen(src);
+	// int n = strlen(buffer);
 	// end_t = clock();
 	// total_t = (double)(end_t - start_t);
 	// printf("orig: %d\n", n);

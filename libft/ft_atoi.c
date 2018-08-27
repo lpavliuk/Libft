@@ -27,10 +27,7 @@ int					ft_atoi(const char *str)
 	(str[i] == '-') ? x = -1 : 0;
 	(str[i] == '+' || str[i] == '-') ? i++ : 0;
 	while (str[i] >= '0' && str[i] <= '9')
-	{
-		num = num * 10 + (str[i] - '0');
-		i++;
-	}
+		num = num * 10 + (str[i++] - '0');
 	(num < 0 && x == -1) ? num = 0 : 0;
 	(num < 0 && x == 1) ? num = -1 : 0;
 	return ((int)(num * x));

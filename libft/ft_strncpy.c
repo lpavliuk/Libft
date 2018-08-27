@@ -21,21 +21,22 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 	begin = dst;
 	src_ptr = (const uintmax_t *)src;
 	dst_ptr = (uintmax_t *)dst;
+	if (!len)
+		return (dst);
 	while (1)
 	{
-		*dst_ptr = *src_ptr;
 		if ((((*src_ptr - 0x101010101010101L)
-			& ~(*src_ptr) & 0x8080808080808080L)) || len < 8)
+			& ~(*src_ptr) & 0x8080808080808080L)) || len <= 8)
 		{
 			src = (const char *)src_ptr;
 			dst = (char *)dst_ptr;
 			while ((*dst++ = *src++) && --len > 0)
 				;
-			(*dst != '\0') ? *dst = '\0' : 0;
+			while (len-- > 1)
+				*dst++ = '\0';
 			return (begin);
 		}
 		len -= 8;
-		dst_ptr++;
-		src_ptr++;
+		*dst_ptr++ = *src_ptr++;
 	}
 }

@@ -23,7 +23,6 @@ char	*ft_strcpy(char *dst, const char *src)
 	dst_ptr = (uintmax_t *)dst;
 	while (1)
 	{
-		*dst_ptr = *src_ptr;
 		if (((*src_ptr - 0x101010101010101L)
 			& ~(*src_ptr) & 0x8080808080808080L))
 		{
@@ -33,7 +32,6 @@ char	*ft_strcpy(char *dst, const char *src)
 				;
 			return (begin);
 		}
-		dst_ptr++;
-		src_ptr++;
+		*dst_ptr++ = *src_ptr++;
 	}
 }
