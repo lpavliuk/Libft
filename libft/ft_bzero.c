@@ -14,17 +14,24 @@
 
 void	ft_bzero(void *s, size_t n)
 {
+	uintmax_t		*ptr;
+	unsigned char	*dst;
 	size_t			i;
-	unsigned char	*d;
 
 	i = 0;
-	d = (unsigned char *)s;
-	if (n > 0)
+	ptr = (uintmax_t *)s;
+	if (!n)
+		return ;
+	while (1)
 	{
-		while (i < n)
+		if (n < 8)
 		{
-			d[i] = '\0';
-			i++;
+			dst = (unsigned char *)ptr;
+			while (n--)
+				*dst++ = 0;
+			return ;
 		}
+		n -= 8;
+		*ptr++ = 0;
 	}
 }
