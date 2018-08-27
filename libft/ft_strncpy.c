@@ -25,12 +25,12 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 		return (dst);
 	while (1)
 	{
-		if ((((*src_ptr - 0x101010101010101L)
-			& ~(*src_ptr) & 0x8080808080808080L)) || len <= sizeof(uintmax_t))
+		if (len < sizeof(uintmax_t) || (((*src_ptr - 0x101010101010101L)
+			& ~(*src_ptr) & 0x8080808080808080L)))
 		{
 			src = (const char *)src_ptr;
 			dst = (char *)dst_ptr;
-			while ((*dst++ = *src++) && --len > 0)
+			while (len && (*dst++ = *src++) && --len > 0)
 				;
 			while (len-- > 1)
 				*dst++ = '\0';

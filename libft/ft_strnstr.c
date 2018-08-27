@@ -12,16 +12,17 @@
 
 #include "libft.h"
 
-static size_t	check(char *b, char *l, size_t i, size_t n)
+static size_t	check(char *b, char *l)
 {
-	while (b[i] == l[n])
+	size_t n;
+
+	n = 0;
+	while (*b++ == *l++)
 	{
-		if (b[i + 1] == '\0' && l[n + 1] == '\0')
+		if (*b == '\0' && *l == '\0')
 			return (0);
-		i++;
-		n++;
 	}
-	if (l[n] == '\0')
+	if (*(l - 1) == '\0')
 		return (0);
 	else
 		return (1);
@@ -29,26 +30,25 @@ static size_t	check(char *b, char *l, size_t i, size_t n)
 
 char			*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	i;
 	size_t	n;
 	char	*b;
 	char	*l;
 
-	i = 0;
+	n = -1;
 	b = (char *)big;
 	l = (char *)little;
-	if (l[i] == '\0')
+	if (*l == '\0')
 		return (b);
-	while (b[i] != '\0' && len && ft_strlen(l) <= len)
+	while (l[++n] != '\0')
+		;
+	while (*b != '\0' && len && n <= len)
 	{
-		n = 0;
-		if (b[i] == l[n])
+		l = (char *)little;
+		if (*b++ == *l++)
 		{
-			n = check(b, l, i, n);
-			if (!n)
-				return (b + i);
+			if (!check((b - 1), (l - 1)))
+				return (b - 1);
 		}
-		i++;
 		len--;
 	}
 	return (NULL);
