@@ -26,7 +26,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 	while (1)
 	{
 		if ((((*src_ptr - 0x101010101010101L)
-			& ~(*src_ptr) & 0x8080808080808080L)) || len <= 8)
+			& ~(*src_ptr) & 0x8080808080808080L)) || len <= sizeof(uintmax_t))
 		{
 			src = (const char *)src_ptr;
 			dst = (char *)dst_ptr;
@@ -36,7 +36,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 				*dst++ = '\0';
 			return (begin);
 		}
-		len -= 8;
+		len -= sizeof(uintmax_t);
 		*dst_ptr++ = *src_ptr++;
 	}
 }
