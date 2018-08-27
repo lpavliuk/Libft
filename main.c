@@ -10,7 +10,7 @@ int main(void)
 	// char	dst1[30];
 	// char	dst2[30];
 	// char *src = "Hello world!";
-	char	*src = "œð˛ʼˇ,´˛ˀ-ºª•¶ªˆ§´";
+	// char	*src = "œð˛ʼˇ,´˛ˀ-ºª•¶ªˆ§´";
 	char	dst1[80];
 	char	dst2[80];
 	size_t	max = 16;
@@ -18,8 +18,18 @@ int main(void)
 	clock_t start_t, end_t, total_t;
 
 	printf("====== ft__strcpy ======\n");
-	ft_bzero(dst, 16);
-	ft_bzero(dst_orig, 16);
+	char	src[] = "test basic du memccpy !";
+	char	buff1[22];
+	char	buff2[22];
+
+	memset(buff1, 0, sizeof(buff1));
+	memset(buff2, 0, sizeof(buff2));
+
+	char	*r1 = memccpy(buff1, src, 'm', 22);
+	char	*r2 = ft_memccpy(buff1, src, 'm', 22);
+
+	printf("|%s| - |%s|\n", r1, r2);
+
 	// i = 10000;
 	// size_t max = 12;
 
@@ -31,14 +41,14 @@ int main(void)
 
 	// printf("dst1: %s, strlen: %d\n", dst1, strlen(dst1));
 	// printf("dst2: %s, strlen: %d\n", dst2, strlen(dst2));
-	memset(dst, 's', 13);
-	if (dst != ft_strncpy(dst, "lorem ipsum", 0))
-		write(1, "dest's adress was not returned\n", 31);
-	write(1, dst, 15);
-	memset(dst_orig, 's', 13);
-	if (dst_orig != strncpy(dst_orig, "lorem ipsum", 0))
-		write(1, "dest's adress was not returned\n", 31);
-	write(1, dst_orig, 15);
+	// memset(dst, 's', 13);
+	// if (dst != ft_strncpy(dst, "lorem ipsum", 0))
+	// 	write(1, "dest's adress was not returned\n", 31);
+	// write(1, dst, 15);
+	// memset(dst_orig, 's', 13);
+	// if (dst_orig != strncpy(dst_orig, "lorem ipsum", 0))
+	// 	write(1, "dest's adress was not returned\n", 31);
+	// write(1, dst_orig, 15);
 	// start_t = clock();
 	// while (--i > 0)
 	// 	ft_strncpy(dst, src, 0);
