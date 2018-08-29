@@ -15,11 +15,11 @@
 char	*ft_strchr(const char *s, int c)
 {
 	int				i;
-	int				mask;
+	uintmax_t		mask;
 	const uintmax_t *ptr;
 
-	i = 8;
-	ptr = (uintmax_t *)s;
+	i = sizeof(uintmax_t);
+	ptr = (const uintmax_t *)s;
 	mask = c + 1;
 	while (i--)
 		mask = (mask << 8) + (c + 1);
