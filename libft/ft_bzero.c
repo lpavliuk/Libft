@@ -14,8 +14,8 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	uintmax_t		*ptr;
 	unsigned char	*dst;
+	uintmax_t		*ptr;
 
 	ptr = (uintmax_t *)s;
 	if (!n)
